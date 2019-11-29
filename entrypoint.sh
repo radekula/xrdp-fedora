@@ -6,7 +6,7 @@ then
     if [ -z "$USER_ID" ]
     then
         useradd $USER --create-home --shell /bin/bash
-        usermod -aG sudo $USER
+        usermod -aG wheel $USER
         if [ -n "$PASSWD" ]
         then
             echo "$USER:$PASSWD" | chpasswd
