@@ -64,4 +64,3 @@ Inside container is a ssh server but is not started. You can start it manualy or
 
 # Issues
  - Google Chrome is needing some kind of workaround to work in container otherwise will not start - not implemented
- - clipboard sharing is not working at least in Remmina - need fix
