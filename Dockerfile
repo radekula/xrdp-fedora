@@ -26,6 +26,8 @@ RUN dnf -y install --allowerasing --best \
        mate-common \
        mate-icon-theme \
        mate-utils-common \
+       mate-backgrounds \
+       f31-backgrounds-mate \
        liberation-*fonts* \
        dejavu-*fonts* \
        marco \
