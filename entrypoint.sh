@@ -1,5 +1,13 @@
 #!/bin/bash
 
+
+if [ -n "$LANGUAGE" ]
+then
+    echo "LANG=$LANGUAGE.UTF-8" > /etc/locale.conf
+    localedef -c -i $LANGUAGE -f UTF-8 $LANGUAGE.UTF-8
+fi
+
+
 if [ -n "$USER" ]
 then
     USER_ID=$(id -u $USER)

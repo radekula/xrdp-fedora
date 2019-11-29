@@ -2,10 +2,16 @@ FROM fedora
 
 COPY entrypoint.sh /
 
-RUN dnf clean all \
-    && dnf -y upgrade
+ENV LANG=en_US.UTF-8
 
-ENV LANG pl_PL.UTF-8
+RUN dnf -y install glibc-locale-source
+
+RUN echo "LANG=en_US.UTF-8" > /etc/locale.conf \
+    && localedef -c -i en_US -f UTF-8 en_US.UTF-8
+
+RUN dnf clean all \
+    && dnf -y upgrade \
+    && dnf -y reinstall glibc-common 
 
 RUN dnf -y install --allowerasing --best \
        mate-panel \
