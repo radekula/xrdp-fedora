@@ -25,8 +25,8 @@ then
 fi
 
 echo "Starting XRDP server"
-rm -f /var/run/xrdp/xrdp-sesman.pid
-rm -f /var/run/xrdp/xrdp.pid
+rm -f /var/run/xrdp-sesman.pid
+rm -f /var/run/xrdp.pid
 xrdp-sesman
 xrdp
 read

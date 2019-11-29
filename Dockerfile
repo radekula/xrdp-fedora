@@ -30,6 +30,9 @@ RUN dnf -y install --allowerasing --best \
        dejavu-*fonts* \
        marco \
        caja \
+       caja-share \
+       gvfs-smb \
+       gnome-vfs2-smb \
        procps \
        xrdp \
        xorgxrdp \
@@ -48,7 +51,8 @@ RUN dnf -y install --allowerasing --best \
 RUN chmod +x /entrypoint.sh \
     && mkdir -p /var/run/xrdp/sockdir \
     && rm -f /etc/xrdp/xrdp.ini \
-    && rm -f /etc/xrdp/sesman.ini
+    && rm -f /etc/xrdp/sesman.ini \
+    && echo "allowed_users = anybody" > /etc/X11/Xwrapper.config
 
 COPY xrdp.ini /etc/xrdp
 COPY sesman.ini /etc/xrdp
