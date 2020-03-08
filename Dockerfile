@@ -15,6 +15,7 @@ RUN dnf clean all \
     && dnf -y install https://download1.rpmfusion.org/{free/fedora/rpmfusion-free,nonfree/fedora/rpmfusion-nonfree}-release-$(rpm -E %fedora).noarch.rpm
 
 RUN dnf -y install --allowerasing --best \
+       cracklib-dicts \
        gstreamer1-libav \
        gstreamer1-plugins-ugly \
        unrar \
