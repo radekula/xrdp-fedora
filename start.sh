@@ -1,5 +1,8 @@
 #!/bin/bash
 
+docker stop xrdp-fedora
+docker rm xrdp-fedora
+
 docker run \
  --name xrdp-fedora \
  -itd \

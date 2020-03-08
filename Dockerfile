@@ -11,9 +11,15 @@ RUN echo "LANG=en_US.UTF-8" > /etc/locale.conf \
 
 RUN dnf clean all \
     && dnf -y upgrade \
-    && dnf -y reinstall glibc-common 
+    && dnf -y reinstall glibc-common \
+    && dnf -y install https://download1.rpmfusion.org/{free/fedora/rpmfusion-free,nonfree/fedora/rpmfusion-nonfree}-release-$(rpm -E %fedora).noarch.rpm
 
 RUN dnf -y install --allowerasing --best \
+       gstreamer1-libav \
+       gstreamer1-plugins-ugly \
+       unrar \
+       compat-ffmpeg28 \
+       ffmpeg-libs \
        mate-panel \
        mate-desktop-libs \
        mate-session-manager \
