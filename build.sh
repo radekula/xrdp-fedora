@@ -1,3 +1,4 @@
 #!/bin/bash
 
-docker build -t xrdp-fedora .
+docker pull fedora
+docker build --no-cache -t xrdp-fedora .
